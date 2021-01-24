@@ -1,4 +1,3 @@
-
 let kurs1 = devisenkurse[0];
 
 let deviseEUR = {
