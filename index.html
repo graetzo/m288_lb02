@@ -1,35 +1,84 @@
-<!DOCTYPE html>
-<html lang="de">
+<!doctype html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Home</title>
-    <link rel="stylesheet" href="css/devisen.css">
+<meta charset="utf-8">
+<title>LB02</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="Six Revisions">
+  <meta name="description" content="How to use the CSS background-size property to make an image fully span the entire viewport.">
+  <link rel="icon" href="http://sixrevisions.com/favicon.ico" type="image/x-icon" />
+  <link href="http://fonts.googleapis.com/css?family=Kotta+One|Cantarell:400,700" rel="stylesheet" type="text/css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+  <!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <!-- Not required: presentational-only.css only contains CSS for prettifying the demo -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- responsive-full-background-image.css stylesheet contains the code you want -->
+  <link rel="stylesheet" href="css/background.css">
+  
+  <!-- Not required: jquery.min.js and presentational-only.js is only used to demonstrate scrolling behavior of the viewport  -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="js/button.js"></script>
 </head>
-<body id="background1">
-
+<body>
 <header>
-    <nav id="main-nav">
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="Umrechner.html">Devisenrechner</a></li>
-        </ul>
-    </nav>
-</header>
-
-<main>
-    <div id="home">
-    <h2>Herzlich Willkommen bei unserem Devisenrechner!</h2>
-        <p>Wir sind zwei Schüler, welche in der Schule ein JavaScript Projekt realisieren durften.
-            Wir haben uns für einen Devisenrechner entschieden, da wir gerne Zahlen haben und mit diesem Rechner können wir verschiedene Währungen schnell und unkompliziert umrechnen.
-            Haben wir Sie in unseren Bann gezogen? Dann Probieren sie unseren Rechner jetzt aus! <br> <br>
-        <a href="Umrechner.html" class="myButton">Umrechner</a></p>
+  <nav class="navbar" id="top">
+    <div class="inner">
+      <a href="https://github.com/graetzo/m288_lb02" target="_blank">Go to Repository</a>
     </div>
-</main>
+  </nav>
+</header>
+  <main class="container">
+    <section class="content">
+      <h1>Welcome to our currency converter</h1>
+      <p class="sub-title">This currency calculator was programmed by two apprentices. <br/> <strong>Try it out now!</strong> </p>
+      <p><a class="button" id="load-more-content" href="#top">Load the Calculator</a></p> <br/>
 
+      <!-- Some content to demonstrate viewport scrolling behavior -->
+      <div id="more-content">
+        <section class="currency">
+          <h3>Home Currency</h3>
+          <p>
+            <input type="text" id="localAmount" size="15" value="">
+            <select id="localExchange">
+              <option value="CHF">CHF</option>
+            </select>
+          </p>
+        </section>
 
-<div class="footer">
-    <p>&copy; 2021 Giulio Raetzo & Sebastian Hamburger</p>
-</div>
+        <section class="operation">
+          <input type="image" id="unten" alt="Convert from local to foreign"
+                 src="images/oben.png" onclick="localToForeign();">
+          <input type="image" id="oben" alt="Convert from foreign to local"
+                 src="images/unten.png" onclick="foreignToLocal();">
+        </section>
+
+        <section class="currency">
+          <h3>Foreign Currency</h3>
+          <p>
+            <input type="text" id="foreignAmount" size="15" value="">
+            <select id="foreignExchange">
+              <option value="EUR">EUR</option>
+              <option value="USD">USD</option>
+              <option value="GBP">GBP</option>
+            </select>
+          </p>
+        </section>
+
+        <script src="js/data.js"></script>
+        <script src="js/app.js"></script>
+        <br/><br/><br/><br/>
+      </div>
+    </section>
+  </main>
+  <footer>
+      <p class="copyright">&copy; 2021 Giulio Raetzo & Sebastian Hamburger</p>
+  </footer>
+
 
 </body>
 </html>
